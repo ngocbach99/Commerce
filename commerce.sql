@@ -122,7 +122,7 @@ CREATE TABLE `cart_items` (
   KEY `fk_cart_bill_idx` (`bill_id`),
   CONSTRAINT `fk_cart_bill` FOREIGN KEY (`bill_id`) REFERENCES `bill` (`id`),
   CONSTRAINT `fk_cart_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `cart_items` (
 
 LOCK TABLES `cart_items` WRITE;
 /*!40000 ALTER TABLE `cart_items` DISABLE KEYS */;
-INSERT INTO `cart_items` VALUES (7,20,1,2),(8,21,1,2),(9,42,1,2);
+INSERT INTO `cart_items` VALUES (7,20,1,2),(8,21,1,2),(9,42,1,2),(10,20,NULL,2),(11,20,NULL,2),(12,20,NULL,2),(13,20,NULL,2),(14,20,NULL,2);
 /*!40000 ALTER TABLE `cart_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -348,6 +348,8 @@ CREATE TABLE `user` (
   `auth_provider` varchar(15) COLLATE utf8_bin DEFAULT NULL,
   `postal_code` int DEFAULT NULL,
   `avatar` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `one_time_password` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `otp_requested_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -358,7 +360,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (52,'iamghost06@gmail.com','$2a$10$i9JKfU8EW7QsJBOJ61hBU.r/6NrFwO4udNCdj1LloSUjii8VJQKdi','Nguyen Ngoc Bach',NULL,NULL,NULL,NULL,0,NULL,'ROLE_USER',1,NULL,NULL,NULL),(54,'iamghost827@gmail.com','$2a$10$Mp9waoY.mQlBYHFqueMJQuBArng3fj/RU4HEMYjyxy6A5Ya14a9ni','Nguyễn Ngọc Bách','0969374719','64, Nguyễn Văn Trỗi, Hà Đông, Hà Nội','Ha Noi','Ha Noi',99999999,NULL,'ROLE_ADMIN',1,NULL,99999999,'202499630_2864426860464509_7769401944136754470_n.jpg'),(90,'ngocbachnguyen100@gmail.com','$2a$10$XZOHSDmtkUdck5M7NdelMe6Xnupo1csaviwZ3JLr8yoCUEnUYnRDm','Nguyễn Ngọc Bách',NULL,NULL,NULL,NULL,0,'2021-09-24 09:08:31','ROLE_USER',1,NULL,NULL,'69402738_2326329874274213_15742996465057792_n.jpg'),(109,'ngocbachnguyen99@gmail.com','$2a$10$cyenQhVq6WJxK6V4crI8juyMoJJ6SMO8gx3d5J013VmGIzC8rq4tW','Nguyễn Ngọc Bách',NULL,NULL,NULL,NULL,0,'2021-09-24 16:13:46','ROLE_USER',1,NULL,NULL,'68710078_2317204161853451_5053846085437489152_n.jpg');
+INSERT INTO `user` VALUES (52,'iamghost06@gmail.com','$2a$10$i9JKfU8EW7QsJBOJ61hBU.r/6NrFwO4udNCdj1LloSUjii8VJQKdi','Nguyen Ngoc Bach',NULL,NULL,NULL,NULL,0,NULL,'ROLE_USER',1,NULL,NULL,NULL,NULL,NULL),(54,'iamghost827@gmail.com','$2a$10$Mp9waoY.mQlBYHFqueMJQuBArng3fj/RU4HEMYjyxy6A5Ya14a9ni','Nguyễn Ngọc Bách','0969374719','64, Nguyễn Văn Trỗi, Hà Đông, Hà Nội','Ha Noi','Ha Noi',100000,NULL,'ROLE_ADMIN',1,NULL,100000,'ba2b7156370cf989082c7daa8a8c336f.jpg',NULL,NULL),(90,'ngocbachnguyen100@gmail.com','$2a$10$XZOHSDmtkUdck5M7NdelMe6Xnupo1csaviwZ3JLr8yoCUEnUYnRDm','Nguyễn Ngọc Bách',NULL,NULL,NULL,NULL,0,'2021-09-24 09:08:31','ROLE_USER',1,NULL,NULL,'69402738_2326329874274213_15742996465057792_n.jpg',NULL,NULL),(109,'ngocbachnguyen99@gmail.com','$2a$10$cyenQhVq6WJxK6V4crI8juyMoJJ6SMO8gx3d5J013VmGIzC8rq4tW','Nguyễn Ngọc Bách',NULL,NULL,NULL,NULL,0,'2021-09-24 16:13:46','ROLE_USER',1,NULL,NULL,'68710078_2317204161853451_5053846085437489152_n.jpg',NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -371,4 +373,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-03  9:00:42
+-- Dump completed on 2022-03-16  8:46:04
