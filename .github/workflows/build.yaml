@@ -1,4 +1,4 @@
-name: commerce-workflows
+name: commerce-spring
 on:
   push:
     branches: [ main ]
@@ -35,7 +35,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/commerce-workflows
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/commerce-spring
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
