@@ -21,11 +21,11 @@ https://imgur.com/gallery/d1fz03x
 
   ### + Lệnh build image  
   
-  ```sh docker build -t commerce-spring . ```
+  ```docker build -t commerce-spring . ```
   
   ### + Lệnh khởi chạy docker-compose với image vừa build
   
-  ```sh docker-compose up -d ```
+  ```docker-compose up -d ```
   
   ### + Truy cập 
   
@@ -37,6 +37,6 @@ https://imgur.com/gallery/d1fz03x
 ---
 
 [1]: https://github.com/ngocbach99
-[2]: https://www.linkedin.com/in/b%C3%A1ch-nguy%E1%BB%85n-ng%E1%BB%8Dc-711a46234/
-[3]: https://www.facebook.com/sao.choi.568847
+[2]: https://www.facebook.com/sao.choi.568847
+[3]: https://www.linkedin.com/in/b%C3%A1ch-nguy%E1%BB%85n-ng%E1%BB%8Dc-711a46234/
  
