@@ -1,5 +1,5 @@
 node{
-    def WORKSPACE = "/Commerce"
+    def WORKSPACE = "/var/jenkins_home/workspace/commerce"
     def dockerImageTag = "commerce${env.BUILD_NUMBER}"
 
     try{
@@ -20,11 +20,11 @@ node{
         }
         stage('Deploy Docker'){
 
-            echo ''Docker Image Tag Name : ${dockerImageTag}''
+            echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh ''docker stop commerce || true && docker rm commerce || true''
+            sh "docker stop commerce || true && docker rm commerce || true"
 
-            sh ''docker run --name commerce -d -p 8888:8080 commerce:${env.BUILD_NUMBER}''
+            sh "docker run --name commerce -d -p 8888:8080 commerce:${env.BUILD_NUMBER}"
         }
     }catch(e){
         throw e
