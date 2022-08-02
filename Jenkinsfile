@@ -8,7 +8,7 @@ node{
             //for display purposes
             //Get some code from Git repository
             git url: 'https://github.com/ngocbach99/Commerce.git',
-            credentialsId: 'global'
+            credentialsId: 'global',
             branch: main
         }
         stage('Build docker'){
@@ -18,7 +18,7 @@ node{
             //sh 'mvn compile'
             dockerImage = docker.build("commerce:${env.BUILD_NUMBER}")
         }
-        stage('Deploy Docker'){
+        stage('Deploy docker'){
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
