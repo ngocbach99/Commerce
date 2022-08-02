@@ -1,5 +1,5 @@
 node{
-    def WORKSPACE = "/commerce"
+    def WORKSPACE = "/var/jenkins_home/workspace/commerce"
     def dockerImageTag = "commerce${env.BUILD_NUMBER}"
 
     try{
@@ -9,7 +9,7 @@ node{
             //Get some code from Git repository
             git url: 'https://github.com/ngocbach99/Commerce.git',
             credentialsId: 'global',
-            branch: main
+            branch: 'main'
         }
         stage('Build docker'){
 
