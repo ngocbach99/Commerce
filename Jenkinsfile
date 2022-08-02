@@ -1,5 +1,5 @@
 node{
-    def WORKSPACE = "/var/jenkins_home/workspace/commerce"
+    def WORKSPACE = "/commerce"
     def dockerImageTag = "commerce${env.BUILD_NUMBER}"
 
     try{
