@@ -18,7 +18,7 @@ node{
             //sh 'mvn compile'
             dockerImage = docker.build("commerce:${env.BUILD_NUMBER}")
         }
-        stage(Deploy Docker){
+        stage('Deploy Docker'){
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
