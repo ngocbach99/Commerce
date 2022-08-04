@@ -28,7 +28,7 @@ node{
 
             sh "docker stop commerce || true && docker rm commerce || true"
 
-            sh "docker run --name commerce -d -p 8081:8080 commerce:${env.BUILD_NUMBER}"
+            sh "docker run --name commerce -d -p 8081:8081 commerce:${env.BUILD_NUMBER}"
         }
     }catch(e){
         throw e
