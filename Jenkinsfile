@@ -20,7 +20,6 @@ node{
             //build maven
             // sh 'mvn clean install'
             //sh 'mvn compile'
-            sh "sudo dockerd"
             dockerImage = docker.build("commerce:${env.BUILD_NUMBER}")
         }
         stage('Deploy docker'){
