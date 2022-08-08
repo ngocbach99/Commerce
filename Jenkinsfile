@@ -2,10 +2,6 @@ node{
     def WORKSPACE = "/var/jenkins_home/workspace/commerce"
     def dockerImageTag = "commerce${env.BUILD_NUMBER}"
 
-    environment {
-            PATH = "$PATH:/usr/local/bin"
-        }
-
     try{
         stage('Clone Repo'){
 
@@ -30,9 +26,9 @@ node{
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "/url/local/bin/docker-compose up -d"
+            sh "/usr/local/bin/docker-compose up -d"
 
-            sh "/url/local/bin/docker-compose ps"
+            sh "/usr/local/bin/docker-compose ps"
 
             //sh "docker stop commerce || true && docker rm commerce || true"
 
