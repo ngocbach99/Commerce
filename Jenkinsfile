@@ -26,7 +26,7 @@ node{
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "docker compose up -D --no-color --wait"
+            sh "docker compose up -D"
 
             sh "docker compose ps"
 
