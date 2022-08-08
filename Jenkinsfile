@@ -2,6 +2,10 @@ node{
     def WORKSPACE = "/var/jenkins_home/workspace/commerce"
     def dockerImageTag = "commerce${env.BUILD_NUMBER}"
 
+    environment {
+            PATH = "$PATH:/usr/local/bin"
+        }
+
     try{
         stage('Clone Repo'){
 
