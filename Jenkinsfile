@@ -26,7 +26,7 @@ node{
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "docker-compose up -d"
+            sh "docker compose up -d"
 
             //sh "docker stop commerce || true && docker rm commerce || true"
 
