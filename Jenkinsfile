@@ -26,9 +26,11 @@ node{
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "docker stop commerce || true && docker rm commerce || true"
+            sh "docker-compose up -d"
 
-            sh "docker run --name commerce -d -p 8081:8081 commerce:${env.BUILD_NUMBER}"
+            //sh "docker stop commerce || true && docker rm commerce || true"
+
+            //sh "docker run --name commerce -d -p 8081:8081 commerce:${env.BUILD_NUMBER}"
         }
     }catch(e){
         throw e
