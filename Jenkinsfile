@@ -15,18 +15,20 @@ node{
              def dockerHome = tool 'myDocker'
              env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
-        stage('Build docker'){
+        /* stage('Build docker'){
 
             //build maven
             // sh 'mvn clean install'
             //sh 'mvn compile'
             dockerImage = docker.build("commerce:${env.BUILD_NUMBER}")
-        }
+        } */
         stage('Deploy docker'){
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "docker compose up -d"
+            sh "docker compose up -d --no-color --wait"
+
+            sh "docker compose ps"
 
             //sh "docker stop commerce || true && docker rm commerce || true"
 
