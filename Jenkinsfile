@@ -26,9 +26,9 @@ node{
 
             echo "Docker Image Tag Name : ${dockerImageTag}"
 
-            sh "docker compose up -D"
+            sh "/url/local/bin/docker-compose up -d"
 
-            sh "docker compose ps"
+            sh "/url/local/bin/docker-compose ps"
 
             //sh "docker stop commerce || true && docker rm commerce || true"
 
