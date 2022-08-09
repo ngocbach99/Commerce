@@ -12,9 +12,9 @@ services:
       - mysql-data:/var/lib/mysql
       - ./commerce.sql:/docker-entrypoint-initdb.d/init.sql
   web:
-    image: ngocbach99/commerce-springboot:latest
+    image: ngocbach99/commerce-spring:latest
     ports:
-      - "8005:8081"
+      - "8005:8080"
     depends_on:
       - mysql
 
